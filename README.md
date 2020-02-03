@@ -8,4 +8,6 @@ Ting-Wei Hsu, Chung-Chi Chen, Hen-Hsen Huang, Meng Chang Chen, and Hsin-Hsi Chen
 
 ## Directories
 
+In this paper, we experiment on the benchmark dataset, [StockNet](https://github.com/yumoxu/stocknet-dataset), which is collected from Twitter. 
+
 
