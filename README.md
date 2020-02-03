@@ -11,4 +11,5 @@ In this paper, we experiment on the benchmark dataset, [StockNet](https://github
 
 ## Code
 
-1. Generating the dataset of Train, Validation and Test for proposed sector in `code.py`
+1. Generate the dataset of Train, Validation and Test for proposed sector in `code.py`.
+2. Train the proposed NN model directly in `NN-PW/train.py` for pair trading task.
