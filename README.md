@@ -11,7 +11,7 @@ In this paper, we experiment on the benchmark dataset, [StockNet](https://github
 
 ## Code
 
-1. Generate the dataset of Train, Validation and Test for proposed sector in `code.py`.
+1. Generate the dataset of Train, Validation and Test for proposed sector in `GenData.py`.
 2. Train the proposed NN model directly in `NN-PW/train.py` (`NN-IND/train.py`) for pair trading (price movement prediction) task.
 3. `test.py` can show the predicted values and predicted labels of the data in Test when creating the final prediction file.
-4. Compute the final 
+4. Compute the accuracy and cumulative profit in `result.py`
