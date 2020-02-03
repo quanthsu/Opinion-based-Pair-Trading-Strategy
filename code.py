@@ -40,7 +40,7 @@ validation = pd.DataFrame()
 
 
 
-StockList = ['AMZN', 'BABA', 'WMT', 'CMCSA', 'HD', 'DIS', 'MCD', 'CHTR', 'UPS', 'PCLN']
+StockList = ['AMZN', 'BABA', 'WMT', 'CMCSA', 'HD', 'DIS', 'MCD', 'CHTR', 'UPS', 'PCLN'] #Service
 
 
 for i in range(len(StockList)):
@@ -218,15 +218,12 @@ SP = SP.pct_change() *100000
 
 res = pd.merge(pp, SP, left_index=True, right_index=True, how='inner')
 
-res['profit_x'] = (res['profit_x'] / 20).cumsum()
-res['profit_y'] = (res['profit_y'] / 20).cumsum()
-res['Adj Close'] = res['Adj Close'].cumsum()
 
 res['profit_x'] /= 1000
 res['profit_y'] /= 1000
 res['Adj Close'] /= 1000
-#res['profit_x'] = res['profit_x'].apply(lambda x: format(x, '.2%'))
-#res['profit_y'] = res['profit_y'].apply(lambda x: format(x, '.2%'))
+
+
 
 plt.rcParams['font.sans-serif'] = ['Arial'] 
 plt.rcParams['axes.unicode_minus'] = False  
@@ -237,10 +234,17 @@ ax = plt.gca()
 ax.spines['top'].set_visible(False)  
 ax.spines['right'].set_visible(False)  
 
-ax.plot(res['profit_x'], label='Stock Movement Prediction')
-ax.plot(res['profit_y'], label='Pair Trading')
-ax.plot(res['Adj Close'], label='S&P500')
-
+ax.plot(ans['profit_cnn_ind'], label='CNN-IND')
+ax.plot(ans['profit_cnn_pw'], label='CNN-PW')
+ax.plot(ans['profit_rnn_ind'], label='RNN-IND')
+ax.plot(ans['profit_rnn_pw'], label='RNN-PW')
+ax.plot(ans['profit_han_ind'], label='HAN-IND')
+ax.plot(ans['profit_han_pw'], label='HAN-PW')
+ax.plot(ans['profit_sann_ind'], label='SANN-IND')
+ax.plot(ans['profit_sann_pw'], label='SANN-PW')
+ax.plot(ans['profit_abcnn_pw'], label='ABCNN-PW', color = 'red', linestyle="-." )
+ax.plot(ans['profit_rand'], label='Random')
+ax.plot(ans['SP'], label='S&P500', linestyle="--")
 
 
 plt.xlabel("Date", fontsize=13, fontweight='bold')
