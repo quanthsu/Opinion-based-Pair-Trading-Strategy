@@ -11,4 +11,4 @@ In this paper, we experiment on the benchmark dataset, [StockNet](https://github
 
 ## Code
 
-1. Generating the dataset of Train, Validation and Test for proposed sector in *code.py*
+1. Generating the dataset of Train, Validation and Test for proposed sector in 'code.py'
